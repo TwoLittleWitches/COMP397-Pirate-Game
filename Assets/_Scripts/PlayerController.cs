@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         _inputs.Player.Move.performed += context => _move = context.ReadValue<Vector2>();
         _inputs.Player.Move.canceled += context => _move = Vector2.zero;
         _inputs.Player.Jump.performed += context => Jump();
+        _inputs.Player.Pause.performed += context => TogglePause();
     }
     void OnEnable()
     {
@@ -42,6 +43,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Stops running if game is currently paused 
+        if (Time.timeScale == 0)
+            return;
+
         _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundRadius, _groundMasks);
         if (_isGrounded && _velocity.y < 0.0f)
         {
@@ -81,5 +86,15 @@ public class PlayerController : MonoBehaviour
             transform.position = _respawn.position;
             _controller.enabled = true;
         }
+    }
+    void TogglePause()
+    {
+    if (Time.timeScale == 0) {
+        Debug.Log($"Game resumed.");
+        Time.timeScale = 1; // Resume 
+    } else {
+        Debug.Log($"Game paused.");
+        Time.timeScale = 0; // Pause 
+    }
     }
 }
