@@ -86,7 +86,9 @@ public class PlayerController : MonoBehaviour
             transform.position = _respawn.position;
             _controller.enabled = true;
         }
+        if (other.CompareTag("Treasure")) Treasure.DestroyItem(other.gameObject);
     }
+
     void TogglePause()
     {
     if (Time.timeScale == 0) {
@@ -96,5 +98,5 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"Game paused.");
         Time.timeScale = 0; // Pause 
     }
-    }
+  }
 }
