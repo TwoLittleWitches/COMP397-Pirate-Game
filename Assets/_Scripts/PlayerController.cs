@@ -82,11 +82,14 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"Colliding with {other.tag}");
         if (other.CompareTag("deathZone"))
         {
-            _controller.enabled = false;
+            MainMenu.GameOver();
+            /*_controller.enabled = false;
             transform.position = _respawn.position;
-            _controller.enabled = true;
+            _controller.enabled = true;*/
         }
+        if (other.CompareTag("Treasure")) Treasure.DestroyItem(other.gameObject);
     }
+
     void TogglePause()
     {
     if (Time.timeScale == 0) {
@@ -96,5 +99,5 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"Game paused.");
         Time.timeScale = 0; // Pause 
     }
-    }
+  }
 }
