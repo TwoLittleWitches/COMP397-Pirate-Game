@@ -14,6 +14,10 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    public static void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
 
     public void RestartGame()
     {

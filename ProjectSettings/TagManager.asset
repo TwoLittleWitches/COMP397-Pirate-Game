@@ -6,6 +6,7 @@ TagManager:
   tags:
   - deathZone
   - Ground
+  - Treasure
   layers:
   - Default
   - TransparentFX
