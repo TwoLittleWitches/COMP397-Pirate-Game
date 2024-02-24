@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 5652927263619453011}
   m_Layer: 0
   m_Name: CoinCollectable
-  m_TagString: Untagged
+  m_TagString: Treasure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treasure: {fileID: 329230541940568995}
-  getSound: {fileID: 1441282634626822425}
+  sound: {fileID: 1441282634626822425}
 --- !u!1001 &599190677441384178
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,18 +6,18 @@ public class Treasure : MonoBehaviour
 {
     [Header ("Get Trigger From")]
     [SerializeField] private GameObject treasure;
-    private static BoxCollider treasureCollider;
+    private BoxCollider treasureCollider;
     [Header("Get Audio From")]
-    [SerializeField] private GameObject getSound;
+    [SerializeField] private GameObject sound;
     private static AudioSource playSound;
     private void Awake()
     {
         treasureCollider = treasure.GetComponent<BoxCollider>();
-        playSound = getSound.GetComponent<AudioSource>();
+        playSound = sound.GetComponent<AudioSource>();
     }
-    public static void DestroyItem(GameObject currentObject)
+    public void TreasureInteraction(GameObject treasureObject)
     {
         playSound.Play();
-        treasureCollider.gameObject.SetActive(false);
+        treasureObject.gameObject.SetActive(false);
     }
 }
