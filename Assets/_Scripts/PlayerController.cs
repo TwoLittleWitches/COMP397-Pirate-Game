@@ -110,7 +110,11 @@ public class PlayerController : Subject
             _controller.enabled = true;
 
             NotifyObservers(PlayerEnums.Died);
-            
+        }
+        if (other.CompareTag("Treasure"))
+        {
+            Treasure newTreasure = new Treasure();
+            newTreasure.TreasureInteraction(other.gameObject);
         }
     }
 
