@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4411246464615719671}
   - component: {fileID: 5550766729127354147}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,9 +64,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5735472742193181560}
   - component: {fileID: 579896973294678620}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DiamondCollectable
-  m_TagString: Untagged
+  m_TagString: Treasure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treasure: {fileID: 8638022664478928793}
-  getSound: {fileID: 8672110700004431033}
+  sound: {fileID: 8672110700004431033}
 --- !u!1 &8672110700004431033
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7154125961347262487}
   - component: {fileID: 7555044962447261155}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,6 +285,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2200a6fa4826bca438424e16a5a79ceb, type: 3}
       propertyPath: m_Name
       value: Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2200a6fa4826bca438424e16a5a79ceb, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2200a6fa4826bca438424e16a5a79ceb, type: 3}
       propertyPath: m_TagString

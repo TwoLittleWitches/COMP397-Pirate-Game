@@ -15,6 +15,8 @@ public class PlayerController : Subject
 
     [Header("Character Controller")]
     [SerializeField] CharacterController _controller;
+    [Header("Character Model/Animation")]
+    [SerializeField] Animator characterAnimator;
 
     [Header("Movement")]
     [SerializeField] float _speed;
@@ -36,7 +38,7 @@ public class PlayerController : Subject
     {
         _camera = Camera.main;
         _controller = GetComponent<CharacterController>();
-
+        characterAnimator = GetComponent<Animator>();
         // from InputSettings/PlayerControl api
         _inputs = new PlayerControl();
         //_inputs.Player.Move.performed += context => DebugMessage(context);
@@ -80,6 +82,13 @@ public class PlayerController : Subject
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_groundCheck.position, _groundRadius);
     }
+    private void Update()
+    {
+        if (_isGrounded)
+        {
+            characterAnimator.SetBool("IsInAir", false);
+        }
+    }
 
     void Jump()
     {
@@ -90,6 +99,7 @@ public class PlayerController : Subject
             NotifyObservers(PlayerEnums.Jump);
         } else { 
             Debug.Log("Not Grounded");
+            characterAnimator.SetBool("IsInAir",true);
         }
     }
 
@@ -110,7 +120,11 @@ public class PlayerController : Subject
             _controller.enabled = true;
 
             NotifyObservers(PlayerEnums.Died);
-            
+        }
+        if (other.CompareTag("Treasure"))
+        {
+            Treasure newTreasure = new Treasure();
+            newTreasure.TreasureInteraction(other.gameObject);
         }
     }
 
