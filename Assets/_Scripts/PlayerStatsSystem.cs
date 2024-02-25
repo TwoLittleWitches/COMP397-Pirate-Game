@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStatsSystem : MonoBehaviour, IObserver
 {
     [SerializeField] private Subject _player;
-    [SerializeField] private int _playerHealth = 3;
+    [SerializeField] private int _playerHealth = 100;
+    [SerializeField] private Slider _healthBar;
+    [SerializeField] private TextMeshProUGUI _healthText;
 
     void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Subject>();
+        _healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<Slider>();
+        _healthText = GameObject.FindGameObjectWithTag("HealthText").GetComponent<TextMeshProUGUI>();
     }
 
     void OnEnable()
@@ -43,7 +50,9 @@ public class PlayerStatsSystem : MonoBehaviour, IObserver
 
     private void ReducePlayerHealth()
     {
-        _playerHealth -= 1;
+        _playerHealth -= 10;
+        _healthBar.value = _playerHealth;
+        _healthText.text = _playerHealth.ToString() + "%";
 
         if (_playerHealth <= 0)
         {
