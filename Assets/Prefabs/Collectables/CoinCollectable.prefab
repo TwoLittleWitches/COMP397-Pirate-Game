@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8667727809105946055}
   - component: {fileID: 6388468166557172166}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4555732162017233847}
   - component: {fileID: 4423723626154692137}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6501110381891625067}
   - component: {fileID: 5652927263619453011}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CoinCollectable
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -285,6 +285,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 64570a6ef0c21e2468b3640504ca3611, type: 3}
       propertyPath: m_Name
       value: Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64570a6ef0c21e2468b3640504ca3611, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 64570a6ef0c21e2468b3640504ca3611, type: 3}
       propertyPath: m_IsActive
