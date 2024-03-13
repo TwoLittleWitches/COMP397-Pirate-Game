@@ -13,6 +13,9 @@ public class PlayerController : Subject
 
     #region Serialized Fields
 
+    [Header("Joystick")]
+    [SerializeField] Joystick joystick;
+
     [Header("Character Controller")]
     [SerializeField] CharacterController _controller;
     [Header("Character Model/Animation")]
@@ -62,6 +65,8 @@ public class PlayerController : Subject
             _velocity.y = -2.0f;
 
         }
+
+        _move = joystick.Direction;
 
         _camForward = _camera.transform.forward;
         _camRight = _camera.transform.right;
