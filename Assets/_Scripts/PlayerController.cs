@@ -9,6 +9,8 @@ public class PlayerController : Subject
     Vector2 _move;
     Camera _camera;
     Vector3 _camForward, _camRight;
+    Vector3 playerPreviousPosition;
+    Vector3 playerCurrentPosition;
     #endregion
 
     #region Serialized Fields
@@ -26,6 +28,8 @@ public class PlayerController : Subject
     [SerializeField] float _gravity = -30.0f;
     [SerializeField] float _jumpHeight = 3.0f;
     [SerializeField] Vector3 _velocity;
+    [SerializeField] float differenceInZ;
+    [SerializeField] float differenceInX;
 
     [Header("Ground Detection")]
     [SerializeField] Transform _groundCheck;
@@ -35,6 +39,7 @@ public class PlayerController : Subject
 
     [Header("Respawn Transform")]
     [SerializeField] Transform _respawn;
+    [SerializeField] private int currentCamIndex;
     #endregion
 
     void Awake()
@@ -74,12 +79,22 @@ public class PlayerController : Subject
         _camRight.y = 0.0f;
         _camForward.Normalize();
         _camRight.Normalize();
-
         Vector3 movement = (_camRight * _move.x + _camForward * _move.y) * _speed * Time.fixedDeltaTime;
-        if(!_controller.enabled) return; // if controller is not enabled, return (stop movement
+        if (!_controller.enabled) return;  // if controller is not enabled, return (stop movement
         _controller.Move(movement);
         _velocity.y += _gravity * Time.fixedDeltaTime;
         _controller.Move(_velocity * Time.fixedDeltaTime);
+
+        if (playerCurrentPosition != playerPreviousPosition)
+        {
+                characterAnimator.SetBool("IsRunningForward", true);
+                playerPreviousPosition = playerCurrentPosition;
+        }
+        else {
+            characterAnimator.SetBool("IsRunningForward", false);
+            playerPreviousPosition = playerCurrentPosition;
+        }
+
     } 
 
     void OnDrawGizmos()
@@ -89,7 +104,11 @@ public class PlayerController : Subject
     }
     private void Update()
     {
-        //if (_isGrounded) characterAnimator.SetBool("IsInAir", false);
+        playerCurrentPosition = this.transform.position;
+        if (!_isGrounded)
+        {
+            characterAnimator.SetBool("IsInAir", false);
+        }
     }
 
     void Jump()
@@ -99,9 +118,10 @@ public class PlayerController : Subject
             Debug.Log("Jumping");  
             _velocity.y = Mathf.Sqrt(_jumpHeight * -2.0f * _gravity);
             NotifyObservers(PlayerEnums.Jump);
+            characterAnimator.SetBool("IsInAir", true);
+            
         } else { 
             Debug.Log("Not Grounded");
-           // characterAnimator.SetBool("IsInAir",true);
         }
     }
 

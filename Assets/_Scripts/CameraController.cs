@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
+    public int camIndex;
+
     PlayerControl _inputs;
 
    [SerializeField] private int _index = 0;
@@ -53,6 +55,11 @@ public class CameraController : MonoBehaviour
         if (_index > _virtualCameras.Count - 1) _index = 0;
     
         ChangeCamera();
+    }
+
+    private void FixedUpdate()
+    {
+        camIndex = _index;
     }
 
     void ChangeCamera()
