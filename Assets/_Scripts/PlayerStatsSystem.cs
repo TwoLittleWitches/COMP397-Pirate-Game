@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Search;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -71,5 +67,13 @@ public class PlayerStatsSystem : MonoBehaviour, IObserver
         SaveGameManager.Instance().SaveGame(_player.transform); 
     }
 
-    
+    public void LoadGame()
+    {
+        PlayerData data = SaveGameManager.Instance().LoadGame();
+        if (data != null)
+        {
+            Debug.Log("Game data loaded");
+            _player.transform.position = JsonUtility.FromJson<Vector3>(data.position);
+        }
+    }
 }
