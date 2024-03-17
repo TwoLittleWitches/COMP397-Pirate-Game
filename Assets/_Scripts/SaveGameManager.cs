@@ -34,4 +34,18 @@ public class SaveGameManager
     file.Close();
     Debug.Log($"Game data saved at {Application.persistentDataPath}/MySavedData.txt");
   }
+
+  public PlayerData LoadGame()
+  { 
+    var path = Application.persistentDataPath + "/MySavedData.txt";
+    if (File.Exists(path))
+    {
+      BinaryFormatter formatter = new BinaryFormatter();
+      FileStream file = new FileStream(path, FileMode.Open);
+      PlayerData data = formatter.Deserialize(file) as PlayerData;
+      file.Close();
+      return data;
+    }
+    return null;
+  }
 }
