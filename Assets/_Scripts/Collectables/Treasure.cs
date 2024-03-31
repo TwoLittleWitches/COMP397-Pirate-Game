@@ -24,13 +24,14 @@ public class Treasure : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        
         if (other.CompareTag("Player"))
         {
             //treasureCount++;
             playSound.Play();
             treasure.SetActive(false);
+            TreasureCalculation.AddTreasure();
         }
+        
     }
 
     void OnTriggerExit(Collider other)
@@ -38,8 +39,7 @@ public class Treasure : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             BoxCollider trigger = gameObject.GetComponent<BoxCollider>();
-            trigger. enabled = false;
-            
+            trigger.enabled = false;
         }
     }
 
