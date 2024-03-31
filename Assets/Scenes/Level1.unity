@@ -2817,7 +2817,7 @@ MonoBehaviour:
   _player: {fileID: 0}
   _audios:
   - audioName: Jump
-    audioClip: {fileID: 8300000, guid: 03cca4e000809684a83bd3c150414896, type: 3}
+    audioClip: {fileID: 8300000, guid: a84b6fbfde69e4f4ebbf2a34f0173b62, type: 3}
   - audioName: Died
     audioClip: {fileID: 8300000, guid: c16d4630bf1afec4e8aeb14e12b595b9, type: 3}
   _sfxSource: {fileID: 1483884561}
