@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1441282634626822425
+--- !u!1 &4327537443982217165
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8667727809105946055}
-  - component: {fileID: 6388468166557172166}
+  - component: {fileID: 5534730944867766456}
+  - component: {fileID: 1220781567191867114}
   m_Layer: 10
   m_Name: Audio
   m_TagString: Untagged
@@ -17,28 +17,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8667727809105946055
+--- !u!4 &5534730944867766456
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441282634626822425}
+  m_GameObject: {fileID: 4327537443982217165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.009999997, z: 0.009999997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1142359331352865049}
+  m_Father: {fileID: 6501110381891625067}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &6388468166557172166
+--- !u!82 &1220781567191867114
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441282634626822425}
+  m_GameObject: {fileID: 4327537443982217165}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -214,6 +214,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4555732162017233847}
+  - {fileID: 5534730944867766456}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5652927263619453011
@@ -229,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treasure: {fileID: 329230541940568995}
-  sound: {fileID: 1441282634626822425}
+  sound: {fileID: 4327537443982217165}
 --- !u!65 &3593522214515651278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -321,10 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 64570a6ef0c21e2468b3640504ca3611, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8667727809105946055}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64570a6ef0c21e2468b3640504ca3611, type: 3}
 --- !u!1 &329230541940568995 stripped

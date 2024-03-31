@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 5735472742193181560}
   - component: {fileID: 579896973294678620}
   - component: {fileID: 2336685798370939163}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DiamondCollectable
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2200a6fa4826bca438424e16a5a79ceb, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2200a6fa4826bca438424e16a5a79ceb, type: 3}
       propertyPath: m_TagString
