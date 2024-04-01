@@ -22,11 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1290919763861509091, guid: a1dcd447bfbb3bc45821f8b436c031d2, type: 3}
       propertyPath: m_AgentTypeID
-      value: 0
+      value: -1372625422
       objectReference: {fileID: 0}
     - target: {fileID: 1290919763861509091, guid: a1dcd447bfbb3bc45821f8b436c031d2, type: 3}
       propertyPath: avoidancePriority
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290919763861509091, guid: a1dcd447bfbb3bc45821f8b436c031d2, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8515472688152868816, guid: a1dcd447bfbb3bc45821f8b436c031d2, type: 3}
       propertyPath: m_Name

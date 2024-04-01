@@ -483,11 +483,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7806187739231821064, guid: 3adc51a76a436e24e874b347cce78ad1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000032966824
+      value: -0.00000003296683
       objectReference: {fileID: 0}
     - target: {fileID: 7806187739231821064, guid: 3adc51a76a436e24e874b347cce78ad1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000004838501
+      value: 0.000000004838502
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4704491535704831158, guid: 3adc51a76a436e24e874b347cce78ad1, type: 3}
@@ -1812,7 +1812,7 @@ Transform:
   m_GameObject: {fileID: 228729216}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -66.8, y: 0, z: 0.28}
+  m_LocalPosition: {x: -36, y: 0, z: 0.009}
   m_LocalScale: {x: 0.2, y: 0.1, z: 0.0066666664}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2817,9 +2817,11 @@ MonoBehaviour:
   _player: {fileID: 0}
   _audios:
   - audioName: Jump
-    audioClip: {fileID: 8300000, guid: 03cca4e000809684a83bd3c150414896, type: 3}
+    audioClip: {fileID: 8300000, guid: a84b6fbfde69e4f4ebbf2a34f0173b62, type: 3}
   - audioName: Died
     audioClip: {fileID: 8300000, guid: c16d4630bf1afec4e8aeb14e12b595b9, type: 3}
+  - audioName: Run
+    audioClip: {fileID: 8300000, guid: 368b2ea4e46811044bf1285c436d0ce2, type: 3}
   _sfxSource: {fileID: 1483884561}
 --- !u!4 &375556283
 Transform:
@@ -3990,6 +3992,7 @@ GameObject:
   - component: {fileID: 632830767}
   - component: {fileID: 632830769}
   - component: {fileID: 632830768}
+  - component: {fileID: 632830770}
   m_Layer: 5
   m_Name: Treasure (txt) (1)
   m_TagString: Untagged
@@ -4113,6 +4116,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632830766}
   m_CullTransparentMesh: 1
+--- !u!114 &632830770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632830766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11ac529ebfdd674185a90f70a6d606a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &634886911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9618,7 +9633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605069720}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14521313, y: -0.000000032966824, z: 0.000000004838501, w: 0.98940045}
+  m_LocalRotation: {x: 0.14521313, y: -0.00000003296683, z: 0.000000004838502, w: 0.98940045}
   m_LocalPosition: {x: 0, y: 7.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9961,7 +9976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8854838474842718699, guid: e9d4272ebdf8d7d419976b1f6c680097, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13227,6 +13242,10 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 2001833042}
+    - target: {fileID: 8460563110340310180, guid: 06f6dc0398fbec147943cd2aaf6714ee, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

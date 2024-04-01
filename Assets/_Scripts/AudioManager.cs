@@ -43,6 +43,9 @@ public class AudioManager : MonoBehaviour, IObserver
             case PlayerEnums.Jump:
                 PlayAudioClip("Jump");
                 break;
+            case PlayerEnums.Run:
+                PlayAudioClip("Run");
+                break;
             default:
                 break;
         

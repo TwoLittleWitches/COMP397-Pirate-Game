@@ -38,6 +38,10 @@ public class PlayerStatsSystem : MonoBehaviour, IObserver
                 Debug.Log("Player notified of jump. Increase score.");
                 CalculateStamina();
                 break;
+            case PlayerEnums.Run:
+                Debug.Log("Player notified of movement.");
+                CalculateStamina();
+                break;
             default:
                     break;
         }

@@ -11,7 +11,7 @@ public class BoatAgent : MonoBehaviour, IAgent
 
   private void FixedUpdate()
   {
-    if (Vector3.Distance(transform.position, _destination) < 1.5f)
+    if (Vector3.Distance(transform.position, _destination) < 21f)
     {
       CompleteJob();
     }
