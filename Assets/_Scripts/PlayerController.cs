@@ -148,7 +148,7 @@ public class PlayerController : Subject
     {
         Debug.Log($"Colliding with {other.tag}");
         
-        if(other.CompareTag("DeathZone"))
+        if(other.CompareTag("DeathZone") || other.CompareTag("Enemy"))
         {
             // stop any movement from controller in order to move/transform, then enable controller again
             _controller.enabled = false;
@@ -158,5 +158,8 @@ public class PlayerController : Subject
 
             NotifyObservers(PlayerEnums.Died);
         }
+
+
+        
     }
 }
