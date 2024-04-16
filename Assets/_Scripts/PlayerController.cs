@@ -11,8 +11,8 @@ public class PlayerController : Subject
     Vector3 _camForward, _camRight;
     Vector3 playerPreviousPosition;
     Vector3 playerCurrentPosition;
-    float runSoundTimer = 0f;
-    float runSoundCooldown = 0.45f;
+    //float runSoundTimer = 0f;
+    //float runSoundCooldown = 0.45f;
     #endregion
 
     #region Serialized Fields
@@ -92,7 +92,7 @@ public class PlayerController : Subject
                 characterAnimator.SetBool("IsRunningForward", true);
                 playerPreviousPosition = playerCurrentPosition;
 
-            if (_isGrounded)
+            /*if (_isGrounded)
             {
                 // Increments the run sound timer
                 runSoundTimer += Time.fixedDeltaTime;
@@ -103,7 +103,7 @@ public class PlayerController : Subject
                     NotifyObservers(PlayerEnums.Run);
                     runSoundTimer = 0f; // Resets the run sound timer
                 }
-            }
+            }*/
         }
         else {
             characterAnimator.SetBool("IsRunningForward", false);
@@ -132,7 +132,6 @@ public class PlayerController : Subject
         {
             Debug.Log("Jumping");  
             _velocity.y = Mathf.Sqrt(_jumpHeight * -2.0f * _gravity);
-            NotifyObservers(PlayerEnums.Jump);
             characterAnimator.SetBool("IsInAir", true);
             
         } else { 
@@ -149,7 +148,7 @@ public class PlayerController : Subject
     {
         Debug.Log($"Colliding with {other.tag}");
         
-        if(other.CompareTag("DeathZone"))
+        if(other.CompareTag("DeathZone") || other.CompareTag("Enemy"))
         {
             // stop any movement from controller in order to move/transform, then enable controller again
             _controller.enabled = false;
@@ -159,5 +158,8 @@ public class PlayerController : Subject
 
             NotifyObservers(PlayerEnums.Died);
         }
+
+
+        
     }
 }

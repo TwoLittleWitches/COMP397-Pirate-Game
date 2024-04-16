@@ -10,11 +10,14 @@ TagManager:
   - Enemy
   - HealthText
   - HealthBar
+  - Sand
+  - Wood
+  - Stone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Sand
   - Water
   - UI
   - Ground
