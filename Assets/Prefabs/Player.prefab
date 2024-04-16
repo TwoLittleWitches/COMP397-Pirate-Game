@@ -217,6 +217,8 @@ MonoBehaviour:
   _gravity: -30
   _jumpHeight: 3.5
   _velocity: {x: 0, y: 0, z: 0}
+  differenceInZ: 0
+  differenceInX: 0
   _groundCheck: {fileID: 1030921475938371297}
   _groundRadius: 0.5
   _groundMask:
@@ -224,6 +226,7 @@ MonoBehaviour:
     m_Bits: 577
   _isGrounded: 0
   _respawn: {fileID: 0}
+  currentCamIndex: 0
 --- !u!143 &1862121997580242495
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1209,6 +1212,10 @@ PrefabInstance:
     - target: {fileID: -340706353326124736, guid: ae8b5a7e1e17d234f8c19f2a21fa90f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.4190071
+      objectReference: {fileID: 0}
+    - target: {fileID: -290538038619889677, guid: ae8b5a7e1e17d234f8c19f2a21fa90f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.374
       objectReference: {fileID: 0}
     - target: {fileID: 227349005467998609, guid: ae8b5a7e1e17d234f8c19f2a21fa90f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
